@@ -1,5 +1,12 @@
 # vue-study
 
+## 3. 你知道vue中key的作用和工作原理吗？说说你对它的理解。
+##### 解答：key可以提高diff的效率，当遍历元素比较少的时候，并不能提高效率，反倒速度不如重新渲染，但是当遍历元素特别多的时候能够大大的提升元素复用效率。不要用index作为key的绑定值。
+##### 再用书本上的话讲就是
+##### 如果使用了key，Vue会根据keys的顺序记录element，曾经拥有了key的element如果不再出现的话，会被直接remove或者destoryed。
+##### refresh方法调用后，包含了span和complexComponent的div的key发生了变化，也就是说曾经拥有了旧key的div不再出现了，当拥有新值的rerender作为key时，拥有了新key的div出现了，那么旧key div会被移除，旧span和complexComponent也会移除，新key div触发渲染，新span，带着父组件新propObj和propArr的新complexComponent渲染。
+
+
 
 ## 2. Vue组件data选项为什么必须是个函数而Vue的根实例则没有此限制？
 
